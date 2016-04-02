@@ -1,11 +1,14 @@
 require 'patryn/class_methods'
-require 'patryn/instance_methods'
-require 'patryn/composition'
+require 'patryn/logger_helper'
 
 module Patryn
+  # Base class for scripts execution
   class Base
     extend ClassMethods
-    include InstanceMethods
-    include Composition
+    include LoggerHelper
+
+    def shoot
+      self.class.api_not_implemented(self)
+    end
   end
 end

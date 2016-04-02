@@ -5,12 +5,12 @@ require 'minitest/autorun'
 require 'byebug'
 require 'fixtures'
 
-def capture_stdout(&block)
+def capture_stdout(&_block)
   stdout_orig = $stdout
   stdout_mock = StringIO.new
   $stdout = stdout_mock
   begin
-    result = block.call
+    result = yield
   ensure
     $stdout = stdout_orig
   end
