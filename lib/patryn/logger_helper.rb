@@ -1,4 +1,5 @@
 require 'patryn/logger_factory'
+require 'logger'
 
 module Patryn
   # Helpers for accesing logger
@@ -12,7 +13,7 @@ module Patryn
 
     def log_attributes
       klass = self.class
-      { level: klass.log_level,
+      { level: ::Logger.const_get(klass.log_level.upcase),
         datetime_format: klass.log_datetime_format,
         formatter: klass.log_formatter }
     end

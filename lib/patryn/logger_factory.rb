@@ -1,5 +1,3 @@
-require 'logger'
-
 module Patryn
   # Responsible for building logger instance
   class LoggerFactory
