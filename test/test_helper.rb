@@ -4,3 +4,15 @@ require 'patryn'
 require 'minitest/autorun'
 require 'byebug'
 require 'fixtures'
+
+def capture_stdout(&block)
+  stdout_orig = $stdout
+  stdout_mock = StringIO.new
+  $stdout = stdout_mock
+  begin
+    result = block.call
+  ensure
+    $stdout = stdout_orig
+  end
+  [result, stdout_mock.string]
+end

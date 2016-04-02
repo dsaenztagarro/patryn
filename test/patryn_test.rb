@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PatrynTest < Minitest::Test
   def setup
-    @script = Myscript.new
+    @script = MyAbstractScript.new
   end
 
   def test_that_it_has_a_version_number
