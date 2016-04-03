@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['david.saenz.tagarro@gmail.com']
 
   spec.summary       = 'Framework for scripts execution'
-  spec.description   = 'TODO: Write a longer description or delete this line.'
+  spec.description   = 'Framework for scripts execution'
   spec.homepage      = 'https://github.com/dsaenztagarro/patryn'
   spec.license       = 'MIT'
 
