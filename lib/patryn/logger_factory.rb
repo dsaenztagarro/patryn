@@ -1,18 +1,25 @@
+require 'logger'
+
 module Patryn
   # Responsible for building logger instance
   class LoggerFactory
     def initialize(opts)
-      @level = opts[:level] || ::Logger::ERROR
+      @device = opts[:device] || $stdout
+      @level = self.class.logger_level(opts[:level]) || Logger::ERROR
       @datetime_format = opts[:datetime_format] || '%Y-%m-%d %H:%M:%S'
       @formatter = opts[:formatter] || default_formatter
     end
 
     def build
-      Logger.new($stdout).tap do |logger|
+      Logger.new(@device).tap do |logger|
         logger.level = @level
         logger.datetime_format = @datetime_format
         logger.formatter = @formatter
       end
+    end
+
+    def self.logger_level(level)
+      Logger.const_get(level.upcase) if level
     end
 
     private

@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/dsaenztagarro/patryn.svg?branch=master)](https://travis-ci.org/dsaenztagarro/patryn)
+[![Code Climate](https://codeclimate.com/github/dsaenztagarro/patryn/badges/gpa.svg)](https://codeclimate.com/github/dsaenztagarro/patryn)
+[![Coverage Status](https://coveralls.io/repos/dsaenztagarro/patryn/badge.svg?branch=master&service=github)](https://coveralls.io/github/dsaenztagarro/patryn?branch=master)
+[![Dependency Status](https://gemnasium.com/dsaenztagarro/patryn.svg)](https://gemnasium.com/dsaenztagarro/patryn)
+[![Inline docs](http://inch-ci.org/github/dsaenztagarro/patryn.svg?branch=master)](http://inch-ci.org/github/dsaenztagarro/patryn)
+
 # Patryn
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/patryn`. To experiment with that code, run `bin/console` for an interactive prompt.
@@ -36,7 +42,17 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 ## Running tests
 
-`ruby -Ilib:test test/patryn_test.rb`
+Running all tests: `rake test`
+
+Running all tests of a file:
+
+```
+ruby -Ilib:test test/patryn_test.rb`
+rake test TEST=test/patryn_test.rb`
+```
+
+Running a test of a file: `rake test TEST=test/patryn_test.rb -n
+test_output_to_file`
 
 ## License
 

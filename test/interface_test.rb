@@ -1,6 +1,7 @@
 require 'test_helper'
 
-class PatrynTest < Minitest::Test
+# Responsible for testing the interface of the script
+class InterfaceTest < Minitest::Test
   def setup
     @script = MyAbstractScript.new
   end
