@@ -6,7 +6,7 @@ module Patryn
     private
 
     def logger
-      @logger ||= LoggerFactory.new(self.class.log_options).build
+      @logger ||= LoggerFactory.new(self.class.logger_options).build
     end
   end
 end

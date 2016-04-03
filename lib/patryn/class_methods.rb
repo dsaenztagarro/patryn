@@ -2,7 +2,7 @@ module Patryn
   # Responsible for adding class methods to base class
   module ClassMethods
     %w(
-      log_options
+      logger_options
     ).each do |field|
       define_method field do |value = nil|
         return instance_variable_get("@#{field}") unless value
