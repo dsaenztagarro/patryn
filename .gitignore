@@ -9,3 +9,4 @@
 /tmp/
 /test/tmp/*.out
 *.gem
+.byebug_history
