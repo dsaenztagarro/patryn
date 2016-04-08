@@ -10,8 +10,8 @@ class InterfaceTest < Minitest::Test
     refute_nil ::Patryn::VERSION
   end
 
-  def test_it_responds_to_shoot
-    assert_respond_to @script, :shoot
+  def test_it_responds_to_run
+    assert_respond_to @script, :run
   end
 
   def test_raise_not_implemented_error

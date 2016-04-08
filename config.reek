@@ -1,7 +1,6 @@
 ---
-
-### Directory specific configuration
-
-"test/support/helpers":
-  UtilityFunction:
-    enabled: false
+DuplicateMethodCall:
+  enabled: false
+  exclude: []
+  max_calls: 1
+  allow_calls: []
