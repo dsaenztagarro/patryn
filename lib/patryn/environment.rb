@@ -7,7 +7,7 @@ module Patryn
       @argv = argv
     end
 
-    def self.ruby_version
+    def ruby_version
       @ruby_version ||= `ruby --version`.delete("\n")
     end
   end
