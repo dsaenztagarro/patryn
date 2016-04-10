@@ -28,3 +28,28 @@ class Stdout2FileScript < Patryn::Base
     logger.debug "Good bye"
   end
 end
+
+class MyParserScript < Patryn::Base
+  def shoot
+    logger.debug "PREFIX: #{@options.prefix}"
+    logger.debug "PROJECTS: #{@options.projects.join ' '}"
+  end
+
+  def opt_parser
+    OptionParser.new do |parser|
+      parser.on('-pPREFIX', '--prefix=PREFIX', 'Prefix of sessions name') do |prefix|
+        options.prefix = prefix
+      end
+      parser.on('-sPROJECTS', '--projects PROJECTS', 'Tmuxinator project names') do |projects|
+        options.projects = projects.split(' ')
+      end
+    end
+  end
+
+  def default_options
+    OpenStruct.new.tap do |options|
+      options.prefix = ''
+      options.projects = []
+    end
+  end
+end

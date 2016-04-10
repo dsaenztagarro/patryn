@@ -4,24 +4,26 @@ require 'test_helper'
 class OptParserTest < Minitest::Test
   include MockHelper
 
-  def test_mandatory_sessions_option_passed
-    env= mock_environment argv: ["--sessions='project_patryn project_my'"]
-    script = MyScript.new(env)
-    assert_equal(script.sessions, %w(project_patryn project_my))
+  def test_options_are_frozen
   end
 
-  def test_mandatory_sessions_option_missing
-    assert_raises(OptParser::NoArgumentError) { MyScript.new(mock_environment) }
+  def test_mandatory_sessions_option_passed
+    env = mock_environment argv: ["--projects", "project_patryn project_my"]
+    script = MyParserScript.new(env)
+    script.parse_options
+    assert_equal %w(project_patryn project_my), script.options.projects
   end
 
   def test_optional_prefix_option_passed
-    environment = mock_environment argv: %w(--prefix=project)
-    script = MyScript.new(environment)
-    assert_equal(script.prefix, 'project')
+    environment = mock_environment argv: %w(--prefix=project_)
+    script = MyParserScript.new(environment)
+    script.parse_options
+    assert_equal 'project_', script.options.prefix
   end
 
   def test_optional_prefix_option_missing
-    script = MyScript.new(mock_environment)
-    assert_equal(script.prefix, 'project')
+    script = MyParserScript.new(mock_environment)
+    script.parse_options
+    assert_equal '', script.options.prefix
   end
 end

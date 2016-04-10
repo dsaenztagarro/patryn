@@ -8,7 +8,7 @@ module Patryn
     end
 
     def ruby_version
-      @ruby_version ||= `ruby --version`.delete("\n")
+      RUBY_VERSION
     end
   end
 end
