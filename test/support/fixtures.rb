@@ -46,7 +46,7 @@ class MyParserScript < Patryn::Base
     end
   end
 
-  def default_options
+  def self.default_options
     OpenStruct.new.tap do |options|
       options.prefix = ''
       options.projects = []

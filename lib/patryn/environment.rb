@@ -3,12 +3,12 @@ module Patryn
   class Environment
     attr_reader :argv
 
-    def new(argv = ARGV)
-      @argv = argv
+    def initialize(args = ARGV)
+      @argv = args
     end
 
     def ruby_version
-      RUBY_VERSION
+      RUBY_DESCRIPTION
     end
   end
 end

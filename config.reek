@@ -4,3 +4,11 @@ DuplicateMethodCall:
   exclude: []
   max_calls: 1
   allow_calls: []
+
+UtilityFunction:
+  exclude:
+    - "Patryn::OptParser::ClassMethods#default_options"
+
+IrresponsibleModule:
+  exclude:
+    - "Patryn::OptParser"
