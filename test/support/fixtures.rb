@@ -37,7 +37,7 @@ class MyParserScript < Patryn::Base
 
   def opt_parser
     OptionParser.new do |parser|
-      parser.on('-pPREFIX', '--prefix=PREFIX', 'Prefix of sessions name') do |prefix|
+      parser.on('-pPREFIX', '--prefix PREFIX', 'Prefix of sessions name') do |prefix|
         options.prefix = prefix
       end
       parser.on('-sPROJECTS', '--projects PROJECTS', 'Tmuxinator project names') do |projects|
